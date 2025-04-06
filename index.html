@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page Watzap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- Review Section -->
+    <section id="review" class="text-center py-5 bg-pink-100">
+      <div class="flex justify-center gap-8">
+        <div>
+          <p class="text-yellow-500 text-2xl">★★★★★</p>
+          <p class="italic font-medium text-brown-700">"tool ini sungguh luar biasa"</p>
+        </div>
+        <div>
+          <p class="text-yellow-500 text-2xl">★★★★★</p>
+          <p class="italic font-medium text-brown-700">"closing terus-menerus"</p>
+        </div>
+        <div>
+          <p class="text-yellow-500 text-2xl">★★★★★</p>
+          <p class="italic font-medium text-brown-700">"sangat user-friendly"</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="hero" class="container bg-pink-100 mx-auto px-6 md:px-20 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+      <div class="max-w-xl mx-auto bg-pink-100">
+        <h2 class="text-green-600 font-semibold text-lg">99,9% Anti Banned & Blokir WhatsApp</h2>
+        <h1 class="text-4xl font-bold mt-2 leading-snug">
+          Kirim Banyak Pesan WhatsApp <br />
+          Hanya dengan Sekali Klik
+        </h1>
+        <p class="mt-4 text-gray-700 text-lg">Tingkatkan Penjualanmu <span class="font-bold text-pink-600">Hingga 300%</span> dengan berinteraksi langsung dengan pelangganmu menggunakan WhatsApp.</p>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a class="bg-pink-600 text-white px-6 py-3 rounded-lg text-lg font-semibold" href="#paket">Coba Sekarang →</a>
+          <a class="bg-white border-2 border-pink-600 text-pink-600 px-6 py-3 rounded-lg text-lg font-semibold" href="#demo-video">Lihat Demo 🎥</a>
+        </div>
+      </div>
+      <div class="flex justify-center bg-pink-100">
+        <img src="img/res-wzp.png" alt="Produk Watzap" class="rounded-xl w-full max-w-lg" />
+      </div>
+    </section>
+
+    <!-- Section: Solusi Lengkap WhatsApp Marketing -->
+    <section id="solusi" class="bg-white mt-10 py-12 px-6">
+      <div
+        class="max-w-4xl mx-auto text-center"
+        x-data="{
+    phrases: [
+      'Kirim Ribuan WhatsApp dengan Sekali Klik',
+      'Kirim Broadcast Tanpa Khawatir Banned',
+      'Mengatur Balasan Dari Setiap Chat Masuk',
+      'Menampilkan Live Chat Widget di Website',
+      'Membuat WA Link Rotator untuk CS Anda',
+      'Integrasi dengan Aplikasi Favorit Anda',
+      'Balas Pesan Masuk Secara Otomatis'
+    ],
+    activeIndex: 0,
+    init() {
+      setInterval(() => {
+        this.activeIndex = (this.activeIndex + 1) % this.phrases.length;
+      }, 2500);
+    }
+  }"
+      >
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Solusi Lengkap WhatsApp Marketing</h2>
+        <p class="text-lg text-gray-700">
+          Dengan <span class="text-pink-600 font-semibold">WatZap</span>, Anda bisa
+          <span class="inline-block relative w-[20rem] h-[1.75em] align-middle">
+            <template x-for="(text, index) in phrases" :key="index">
+              <span
+                x-show="activeIndex === index"
+                x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-500"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
+                class="absolute left-0 top-0 w-full text-pink-600 font-semibold whitespace-nowrap"
+                x-text="text"
+              ></span>
+            </template> </span
+          >.
+        </p>
+        <img src="img/autoreply.png" alt="Fitur WhatsApp Marketing" class="mx-auto mt-8 w-4xl" />
+      </div>
+    </section>
+
+    <!-- Section: Pilih Paket -->
+    <section class="bg-white py-16 px-6 text-center" x-data="{ paket: '3bulan' }" id="paket">
+      <p class="text-green-600 font-medium flex items-center justify-center gap-2">💬 Tool WhatsApp Marketing Terbaik di Indonesia</p>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2">Pilih Paket Sesuai Kebutuhan Anda</h2>
+      <p class="mt-2 text-gray-600 text-lg">Investasi terbaik untuk Anda yang ingin meningkatkan omset penjualan!</p>
+
+      <!-- Toggle -->
+      <div class="mt-6 flex justify-center items-center gap-2">
+        <div class="relative flex bg-white border-2 border-pink-600 rounded-full overflow-visible shadow-md">
+          <!-- Tombol 3 Bulan -->
+          <div class="relative">
+            <button @click="paket = '3bulan'" class="px-6 py-2 font-semibold transition-all rounded-l-full" :class="paket === '3bulan' ? 'bg-pink-600 text-white' : 'text-pink-600'">Paket 3 Bulan</button>
+            <!-- Diskon -->
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-yellow-300 text-black text-xs font-bold px-2 py-1 rounded-full shadow"> -20% </span>
+          </div>
+
+          <!-- Tombol 1 Tahun -->
+          <div class="relative">
+            <button @click="paket = '1tahun'" class="px-6 py-2 font-semibold transition-all rounded-r-full" :class="paket === '1tahun' ? 'bg-pink-600 text-white' : 'text-pink-600'">Paket 1 Tahun</button>
+            <!-- Diskon -->
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-yellow-300 text-black text-xs font-bold px-2 py-1 rounded-full shadow"> -60% </span>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4 ml-20 text-blue-600 text-sm md:text-base">Hemat <span class="font-bold">60%</span> dengan Paket Tahunan</p>
+
+      <!-- Cards -->
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto transition-all duration-500">
+        <!-- PREMIUM -->
+        <div class="border border-blue-600 rounded-2xl p-6 shadow-xl relative">
+          <div class="absolute -top-3 -left-3 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-tr-2xl">DENGAN FITUR TERLENGKAP</div>
+          <h3 class="text-2xl font-bold mt-4">PREMIUM</h3>
+          <div x-show="paket === '3bulan'" x-transition>
+            <p class="line-through text-gray-500 mt-2">IDR 723.750</p>
+            <p class="text-4xl font-bold text-blue-600 mt-1">IDR 193.000 <span class="text-base font-medium text-gray-500">/ bulan</span></p>
+            <p class="mt-1 text-gray-700">Rp 579.000 <strong>Per 3 Bulan</strong></p>
+          </div>
+          <div x-show="paket === '1tahun'" x-transition>
+            <p class="line-through text-gray-500 mt-2">IDR 2.475.000</p>
+            <p class="text-4xl font-bold text-blue-600 mt-1">IDR 82.500 <span class="text-base font-medium text-gray-500">/ bulan</span></p>
+            <p class="mt-1 text-gray-700">Rp 990.000 <strong>Per 12 Bulan</strong></p>
+          </div>
+          <button
+            @click="window.location.href='bayar.html'"
+            class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl w-full font-semibold hover:bg-blue-700"
+          >
+            → Daftar Sekarang
+          </button>
+          <ul class="mt-6 space-y-2 text-left text-sm text-gray-700">
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i><strong>6 WhatsApp Number</strong> (Included)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i><strong>50.000 Contacts</strong> (Included)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Send Unlimited Messages</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Unlimited Devices</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Smart Auto Reply (Chatbot)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>100 WA Link Rotator</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>30 Website (Live Chat Widget)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>6 Team Member</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>3rd Party Integrations (15 Apps)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Custom Domain & Logo (Add-On)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>REST API Support</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Interactive Messages (Auto-reply)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Multi-user WhatsApp Web</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Perfect Timing Broadcast</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Allow Unsubscribe</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Prioritized Technical Support</li>
+          </ul>
+        </div>
+
+        <!-- PLUS -->
+        <div class="border border-pink-600 rounded-2xl p-6 shadow-xl relative">
+          <div class="absolute -top-3 -right-3 bg-pink-600 text-white text-xs font-bold px-4 py-1 rounded-bl-2xl">PALING LARIS</div>
+          <h3 class="text-2xl font-bold mt-4">PLUS</h3>
+          <div x-show="paket === '3bulan'" x-transition>
+            <p class="line-through text-gray-500 mt-2">IDR 598.750</p>
+            <p class="text-4xl font-bold text-pink-600 mt-1">IDR 159.667 <span class="text-base font-medium text-gray-500">/ bulan</span></p>
+            <p class="mt-1 text-gray-700">Rp 479.000 <strong>Per 3 Bulan</strong></p>
+          </div>
+          <div x-show="paket === '1tahun'" x-transition>
+            <p class="line-through text-gray-500 mt-2">IDR 2.225.000</p>
+            <p class="text-4xl font-bold text-pink-600 mt-1">IDR 74.167 <span class="text-base font-medium text-gray-500">/ bulan</span></p>
+            <p class="mt-1 text-gray-700">Rp 890.000 <strong>Per 12 Bulan</strong></p>
+          </div>
+          <button
+            @click="window.location.href='bayar.html'"
+            class="mt-6 bg-pink-600 text-white px-6 py-3 rounded-xl w-full font-semibold hover:bg-pink-700"
+          >
+            → Daftar Sekarang
+          </button>
+          <ul class="mt-6 space-y-2 text-left text-sm text-gray-700">
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i><strong>4 WhatsApp Number</strong> (Included)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i><strong>25.000 Contacts</strong> (Included)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Send Unlimited Messages</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Unlimited Devices</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Smart Auto Reply (Chatbot)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>50 WA Link Rotator</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>15 Website (Live Chat Widget)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>4 Team Member</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>3rd Party Integrations (9 Apps)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Custom Domain & Logo (Add-On)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>REST API Support</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Interactive Messages (Auto-reply)</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Multi-user WhatsApp Web</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Perfect Timing Broadcast</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Allow Unsubscribe</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Prioritized Technical Support</li>
+          </ul>
+        </div>
+
+        <!-- PERSONAL -->
+        <div class="border border-green-600 rounded-2xl p-6 shadow-xl">
+          <h3 class="text-2xl font-bold mt-4">PERSONAL</h3>
+          <div x-show="paket === '3bulan'" x-transition>
+            <p class="line-through text-gray-500 mt-2">IDR 473.750</p>
+            <p class="text-4xl font-bold text-green-600 mt-1">IDR 126.333 <span class="text-base font-medium text-gray-500">/ bulan</span></p>
+            <p class="mt-1 text-gray-700">Rp 379.000 <strong>Per 3 Bulan</strong></p>
+          </div>
+          <div x-show="paket === '1tahun'" x-transition>
+            <p class="line-through text-gray-500 mt-2">IDR 1.975.000</p>
+            <p class="text-4xl font-bold text-green-600 mt-1">IDR 65.833 <span class="text-base font-medium text-gray-500">/ bulan</span></p>
+            <p class="mt-1 text-gray-700">Rp 790.000 <strong>Per 12 Bulan</strong></p>
+          </div>
+          <button
+          @click="window.location.href='bayar.html'"
+          class="mt-6 bg-green-600 text-white px-6 py-3 rounded-xl w-full font-semibold hover:bg-green-700"
+          >
+            → Daftar Sekarang
+          </button>
+          <ul class="mt-6 space-y-2 text-left text-sm text-gray-700">
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i><strong>2 WhatsApp Number</strong> (Included)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i><strong>10.000 Contacts</strong> (Included)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Send Unlimited Messages</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Unlimited Devices</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Smart Auto Reply (Chatbot)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>20 WA Link Rotator</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>5 Website (Live Chat Widget)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>2 Team Member</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>3rd Party Integrations (3 Apps)</li>
+            <li><i class="bi bi-check-circle-fill text-green-500 mr-2"></i>Custom Domain & Logo (Add-On)</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>REST API Support</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Interactive Messages (Auto-reply)</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Multi-user WhatsApp Web</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Perfect Timing Broadcast</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Allow Unsubscribe</li>
+            <li><i class="bi bi-x-circle-fill text-gray-400 mr-2"></i>Prioritized Technical Support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-5xl mx-auto pb-12 px-4 text-center mb-10">
+        <h2 class="text-sm font-medium text-gray-600 mb-4">Channel Pembayaran Kami</h2>
+        <div class="justify-center gap-4">
+          <img src="img/metode-pembayaran-min.png" alt="" class="mx-auto" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Demo Video -->
+    <section id="demo-video" class="bg-[#0e2a47] mt-10 py-16 text-white text-center relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-4">
+        <!-- Judul Section -->
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">Demo Kirim Broadcast dengan <span class="text-[#ef476f]">WatZap</span></h2>
+
+        <!-- Thumbnail Video -->
+        <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg cursor-pointer group">
+          <a href="https://www.youtube.com/watch?v=4vUXKMRVQmY" target="_blank" rel="noopener noreferrer">
+            <img src="img/demo.png" alt="Demo Video WatZap" class="w-full object-cover" />
+
+            <!-- Tombol Play -->
+            <div class="absolute inset-0 flex items-center justify-center bg-black/50 group-hover:bg-black/60 transition">
+              <div class="bg-white rounded-full p-4 shadow-lg">
+                <svg class="w-10 h-10 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Teks Konversi -->
+        <p class="text-lg md:text-base font-semibold mt-8"><span class="text-yellow-400">Investasi Terbaikmu</span> untuk Meningkatkan Konversi</p>
+
+        <!-- Tombol CTA -->
+         <div class="mt-10">
+          <a class="bg-[#e63985] mt-10 text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-pink-600 transition" href="#paket">📈 Tingkatkan Konversi Penjualan Saya</a>
+         </div>
+        
+      </div>
+    </section>
+
+    <!-- Fitur Lengkap -->
+    <section id="fitur" class="py-16 bg-[#edf4fc] text-center">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Apa Saja <span class="text-[#e63985]">Fitur Canggih</span> di WatZap?</h2>
+        <p class="text-gray-600 text-base sm:text-lg mb-12 max-w-3xl mx-auto">WatZap.id adalah tool berbasis web untuk Anda sebagai pebisnis online yang dapat membantu penjualan di bisnis Anda jadi jauh lebih efektif & efisien.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          <!-- 1 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f1.png" alt="Send Unlimited" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Send Unlimited Messages</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Kirim pesan ke ratusan kontak WhatsApp hanya dengan sekali klik, tanpa harus simpan nomor</p>
+          </div>
+
+          <!-- 2 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f2.png" alt="Smart Auto Reply" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Smart Auto Reply (Chatbot)</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Buat chatbot Anda sendiri untuk menjawab setiap pertanyaan secara otomatis</p>
+          </div>
+
+          <!-- 3 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f3.png" alt="Custom Message" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Fully Customizable Message</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Buat isi pesan Anda menjadi dinamis dengan menambahkan nama customer dan emoji</p>
+          </div>
+
+          <!-- 4 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f4.png" alt="Image Broadcast" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Attach Image on Broadcast Message</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Buat isi pesan Anda lebih menarik lagi dengan melampirkan gambar</p>
+          </div>
+
+          <!-- 5 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f5.png" alt="Custom Domain" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Custom Domain & Custom Logo</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Miliki WA Blast dengan branding domain & logo Anda sendiri dengan sekali klik.</p>
+          </div>
+
+          <!-- 6 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f6.png" alt="Bad Words Filter" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">"Bad Words" Filter - Anti WA Banned</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Deteksi otomatis kata/kalimat yang dilarang pada pesan Anda agar tetap aman.</p>
+          </div>
+
+          <!-- 7 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f7.png" alt="Perfect Timing" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Smart "Perfect Timing" Broadcasting</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Kami akan mengirimkan pesan Anda secara otomatis pada waktu dan jam terbaik</p>
+          </div>
+
+          <!-- 8 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f8.png" alt="Broadcast Schedule" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Custom Broadcast Scheduling</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Buat pagi, Kirim malam. Semua terserah Anda. Silahkan tentukan jam Anda sendiri</p>
+          </div>
+
+          <!-- 9 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f9.png" alt="Spintax" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Spintax Replacement (Word-by-word)</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Fitur canggih yang dapat memanipulasi kata pada isi pesan agar berbeda tiap kontak</p>
+          </div>
+
+          <!-- 10 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f10.png" alt="Multiple User" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Multiple User WhatsApp</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Satu akun WhatsApp bisa digunakan oleh banyak user secara bersamaan</p>
+          </div>
+
+          <!-- 11 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f11.png" alt="Sync Contacts" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Sync Contacts from WhatsApp</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Impor semua kontak yang Anda miliki ke dalam WatZap dengan mudah</p>
+          </div>
+
+          <!-- 12 -->
+          <div class="bg-white rounded-xl p-4 sm:p-5 shadow">
+            <img src="img/f12.png" alt="Group Grabber" class="mx-auto h-12 mb-3" />
+            <h3 class="font-semibold text-sm sm:text-base mb-1">Group Contacts Grabber</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Gak punya nomor? Import aja semua nomor di grup WhatsApp Anda!</p>
+          </div>
+        </div>
+
+        <!-- Tombol CTA 
+        <div class="mt-10">
+          <button class="bg-[#e63985] text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-pink-600 transition">&#x1F4CA; Lihat Semua Fitur</button>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Tingkatkan Omzet -->
+    <section id="omzet" class="bg-pink-100 pt-16 pb-10 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16">
+        <!-- Kiri: Teks -->
+        <div class="lg:w-1/2 text-center lg:text-left">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+            Tingkatkan Omzet Bisnis dengan WhatsApp. <br class="hidden sm:block" />
+            <span class="text-2xl sm:text-3xl lg:text-4xl text-[#e63985]">(Kerja 24 Jam Full)</span>
+          </h1>
+          <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+            Otomatiskan bisnis Anda menggunakan Sistem Broadcast Pesan paling powerful dan Smart ChatBot yang sudah kami sediakan. Tanpa batasan pengiriman pesan harian, <strong>FULL UNLIMITED.</strong>
+          </p>
+
+          <!-- Tombol CTA -->
+          <a class="bg-[#e63985] mt-10 text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-pink-600 transition" href="#paket">📈 Tingkatkan Konversi Penjualan Saya</a>
+        </div>
+
+        <!-- Kanan: Gambar Dashboard -->
+        <div class="lg:w-1/2">
+          <img src="img/omzet.png" alt="Dashboard WatZap" class="w-full max-w-2xl mx-auto drop-shadow-xl rounded-xl" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Integrate with Platforms -->
+    <section id="integrasi" class="bg-[#1e2a47] pt-16 pb-10 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col-reverse lg:flex-row items-center gap-10">
+        <!-- Kanan: Gambar Dashboard -->
+        <div class="lg:w-2/5">
+          <img src="img/tool.png" alt="Dashboard WatZap" class="max-w-xl mx-auto drop-shadow-xl rounded-xl" />
+        </div>
+
+        <!-- Kiri: Teks -->
+        <div class="lg:w-3/5 text-left text-white mx-auto">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+            Integrasikan WatZap Dengan <span class="text-yellow-400">Aplikasi Favorit </span>Anda
+          </h1>
+          <p class="text-white-700 text-base sm:text-lg leading-relaxed mb-6">
+            <div class="container py-2 px-2">
+              <div class="grid grid-cols-3 gap-6">
+                  <div>
+                      <ul class="list-none space-y-2">
+                          <li><span class="mr-2">•</span>OrderOnline.id</li>
+                          <li><span class="mr-2">•</span>Scalev.id</li>
+                          <li><span class="mr-2">•</span>Berdu.id</li>
+                          <li><span class="mr-2">•</span>KIRIM.EMAIL</li>
+                          <li><span class="mr-2">•</span>WooCommerce</li>
+                      </ul>
+                  </div>
+                  <div>
+                      <ul class="list-none space-y-2">
+                          <li><span class="mr-2">•</span>LandingPress</li>
+                          <li><span class="mr-2">•</span>Sejoli</li>
+                          <li><span class="mr-2">•</span>Elementor Form</li>
+                          <li><span class="mr-2">•</span>WPForms</li>
+                          <li><span class="mr-2">•</span>Contact Form 7</li>
+                      </ul>
+                  </div>
+                  <div>
+                      <ul class="list-none space-y-2">
+                          <li><span class="mr-2">•</span>Google Form</li>
+                          <li><span class="mr-2">•</span>Spreadsheet</li>
+                          <li><span class="mr-2">•</span>Gmail</li>
+                          <li><span class="mr-2">•</span>Themefood.id</li>
+                          <li><span class="mr-2">•</span>Zapier</li>
+                      </ul>
+                  </div>
+              </div>
+          </p>
+
+          <!-- Tombol CTA -->
+           <div class="text-center lg:text-left mt-10">
+            <a class="bg-[#e63985] mt-10 text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-pink-600 transition" href="paket">📈 Tingkatkan Konversi Penjualan Saya</a>
+           </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: FAQ (Pertanyaan Umum) -->
+    <section id="faq" class="bg-white py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="" target="_blank" class="block text-gray-400 text-center">
+          <i class="bi bi-question-lg text-5xl"></i>
+        </a>
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">F.A.Q - Pertanyaan Umum</h2>
+        <p class="text-center text-lg mb-12">Hal-hal yang paling sering ditanyakan 😇</p>
+        
+        <!-- FAQ Accordion -->
+        <div class="">
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="w-full rounded-t-lg text-left text-base font-medium text-gray-800 bg-gray-100 p-4 border shadow-lg flex justify-between items-center">
+              <span>Apa itu WatZap?</span>
+              <span x-show="!open" class="text-2xl">+</span>
+              <span x-show="open" class="text-2xl">−</span>
+            </button>
+            <div x-show="open" class="px-4 py-2 text-base text-gray-700 bg-gray-100">
+              WatZap adalah tool yang dapat mengirimkan pesan ke banyak nomor WhatsApp hanya dengan sekali klik. Tidak hanya itu, di WatZap juga ada fitur-fitur canggih seperti Group Contacts Grabber, Live Chat Widget, WA Link Rotator dan lainnya.
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="w-full text-left text-base font-medium text-gray-800 bg-gray-100 p-4 border shadow-lg flex justify-between items-center">
+              <span>Masa sih saya butuh WatZap?</span>
+              <span x-show="!open" class="text-2xl">+</span>
+              <span x-show="open" class="text-2xl">−</span>
+            </button>
+            <div x-show="open" class="px-4 py-2 text-base text-gray-700 bg-gray-100">
+              WatZap sangat berguna bagi Anda yang ingin mengirim pesan massal ke banyak kontak WhatsApp secara otomatis dan menghemat waktu dalam berkomunikasi dengan pelanggan.
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="w-full text-left text-base font-medium text-gray-800 bg-gray-100 p-4 border shadow-lg flex justify-between items-center">
+              <span>Apakah WatZap cocok untuk saya?</span>
+              <span x-show="!open" class="text-2xl">+</span>
+              <span x-show="open" class="text-2xl">−</span>
+            </button>
+            <div x-show="open" class="px-4 py-2 text-base text-gray-700 bg-gray-100">
+              Ya, WatZap cocok untuk semua jenis bisnis yang ingin meningkatkan penjualan melalui WhatsApp, mulai dari usaha kecil hingga besar.
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="w-full text-left text-base font-medium text-gray-800 bg-gray-100 p-4 border shadow-lg flex justify-between items-center">
+              <span>Apakah sudah ada database nomor WhatsApp-nya?</span>
+              <span x-show="!open" class="text-2xl">+</span>
+              <span x-show="open" class="text-2xl">−</span>
+            </button>
+            <div x-show="open" class="px-4 py-2 text-base text-gray-700 bg-gray-100">
+              Anda bisa mengimpor nomor WhatsApp dari berbagai sumber seperti kontak di perangkat Anda, Google Spreadsheet, atau bahkan grup WhatsApp.
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="w-full text-left text-base font-medium text-gray-800 bg-gray-100 p-4 border shadow-lg flex justify-between items-center">
+              <span>Apakah WatZap perlu di-install ke komputer?</span>
+              <span x-show="!open" class="text-2xl">+</span>
+              <span x-show="open" class="text-2xl">−</span>
+            </button>
+            <div x-show="open" class="px-4 py-2 text-base text-gray-700 bg-gray-100">
+              Tidak, WatZap adalah tool berbasis web, sehingga Anda tidak perlu menginstalnya di komputer. Anda bisa mengaksesnya melalui browser.
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="w-full rounded-b-lg  text-left text-base font-medium text-gray-800 bg-gray-100 p-4 border shadow-lg flex justify-between items-center">
+              <span>Saya gaptek, Apakah ada panduan penggunaannya?</span>
+              <span x-show="!open" class="text-2xl">+</span>
+              <span x-show="open" class="text-2xl">−</span>
+            </button>
+            <div x-show="open" class="px-4 py-2 text-base text-gray-700 bg-gray-100">
+              Tenang saja, kami menyediakan panduan lengkap yang bisa Anda ikuti untuk memulai menggunakan WatZap dengan mudah.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer" class="bg-white pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Footer Information -->
+        <div class="text-center text-sm text-gray-500 mb-8">
+          <p>WhatsApp Logo are brand assets and trademark of Facebook, Inc.</p>
+          <p>WatZap is not in partnership, sponsored or endorsed by Facebook, Inc.</p>
+          <p class="mt-4">2025 – All Rights Reserved © WatZap Indonesia</p>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
